@@ -26,37 +26,37 @@ and that we are hitting variations of the endpoint such as
 and that after hitting this endpoint (specifically ```https://api.example.com/users```) we get back the following JSON payload:
 ```
 {
-“meta”: {
-“code”: 200
-},
-“response”: {
-“users”: [
-{
-“name”: “Lancelot”,
-“location”: {
-“country”: “USA”,
-“state”: “OH”,
-“city”: “Cincinnati”
-},
-“dimensions” {
-“height”: 182,
-“weight”: 160
-}
-},
-{
-“name”: “Spence”,
-“location”: {
-“country”: “USA”,
-“state”: “PA”,
-“city”: “Pittsburgh”
-},
-“dimensions” {
-“height”: 160,
-“weight”: 150
-}
-}
-]
-}
+  “meta”: {
+    “code”: 200
+  },
+  “response”: {
+    “users”: [
+      {
+		“name”: “Lancelot”,
+		“location”: {
+		  “country”: “USA”,
+		  “state”: “OH”,
+		  “city”: “Cincinnati”
+		},
+		“dimensions” {
+		  “height”: 182,
+		  “weight”: 160
+		}
+	  },
+	  {
+		“name”: “Spence”,
+		“location”: {
+		  “country”: “USA”,
+		  “state”: “PA”,
+		  “city”: “Pittsburgh”
+		},
+		“dimensions” {
+		  “height”: 160,
+		  “weight”: 150
+		}
+	  }
+	]
+  }
 }
 ```
 
@@ -66,20 +66,20 @@ Now that we have the payload we want, we need to store that payload into the rel
 The first step is to set up objects for everything in the payload. We would need to make .h files for each meaning we'd has User.h, Location.h and Dimensions.h; each would have interfaces as below:
 ```
 @interface User : NSObject
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) Location *location;
-@property (strong, nonatomic) Dimensions *dimensions;
+  @property (strong, nonatomic) NSString *name;
+  @property (strong, nonatomic) Location *location;
+  @property (strong, nonatomic) Dimensions *dimensions;
 @end
 
 @interface Location : NSObject
-@property (strong, nonatomic) NSString *country;
-@property (strong, nonatomic) NSString *state;
-@property (strong, nonatomic) NSString *city;
+  @property (strong, nonatomic) NSString *country;
+  @property (strong, nonatomic) NSString *state;
+  @property (strong, nonatomic) NSString *city;
 @end
 
 @interface Dimensions : NSObject
-@property (strong, nonatomic) NSNumber *height;
-@property (strong, nonatomic) NSNumber *weight;
+  @property (strong, nonatomic) NSNumber *height;
+  @property (strong, nonatomic) NSNumber *weight;
 @end
 ```
 
@@ -93,19 +93,21 @@ Some things that we should note: we should only perform the initialization once 
 {
     static RKObjectManager *instance;
     static dispatch_once_t onceToken;
-dispatch_once(&onceToken, ^{
-NSURL *baseURL = [NSURL URLWithString:@"https://api.example.com"];
-AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
-instance = [[RKObjectManager alloc] initWithHTTPClient:client];
-   });
-   return instance;
+	dispatch_once(&onceToken, ^{
+		NSURL *baseURL = [NSURL URLWithString:@"https://api.example.com"];
+		AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+		instance = [[RKObjectManager alloc] initWithHTTPClient:client];
+    });
+	return instance;
 }
 ```
 
 ###Unique initialization in viewDidLoad
+```
 NSURL *baseURL = [NSURL URLWithString:@"https://api.example.com"];
 AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
 RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+```
 
 ###Setting up the object mappings
 All of this setup should be fairly straightforward, just reference the payload and interfaces for clarity.
@@ -138,8 +140,14 @@ Now that we have this setup we need to make the actual request. Consider our req
 ```
 - (void)getUsers
 {
-NSDictionary *queryParams = @{@”planet”: “earth”};
-[[RKObjectManager sharedManager] getObjectsAtPath:@”/users” parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) { /* here is where you would put whatever code you want executed after the call is cpt, note that mappingResult.array will have the user objects returned */} failure:^(RKObjectRequestOperation *operation, NSError *error) { /* this is where you put whatever you want to handle the error, for example NSLog(@”booo %@”, error);}];
+	NSDictionary *queryParams = @{@”planet”: “earth”};
+	[[RKObjectManager shareManager]] getObjectsAtPath:@”/users” 
+										   parameters:queryParams 
+										      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) { 
+		/* here is where you would put whatever code you want executed after the call is cpt, note that mappingResult.array will have the user objects returned */}
+											  failure:^(RKObjectRequestOperation *operation, NSError *error) { 
+		/* this is where you put whatever you want to handle the error, for example NSLog(@”booo %@”, error); */
+	}];
 }
 ```
 
