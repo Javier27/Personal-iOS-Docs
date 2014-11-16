@@ -20,12 +20,12 @@ All study depends on scripture and the readers should not hold any beliefs stric
 Doctrine is what the whole Bible teaches us today about some particular topic.
 
 ####The seven sections of Biblical doctrine covered:
-Part 1: The Doctrine of the Word of God
-Part 2: The Doctrine of God
-Part 3: The Doctrine of Man
-Part 4: The Doctrine of Christ and the Holy Spirit
-Part 5: The Doctrine of the Application of Redemption
-Part 6: The Doctrine of the Church
+Part 1: The Doctrine of the Word of God<br />
+Part 2: The Doctrine of God<br />
+Part 3: The Doctrine of Man<br />
+Part 4: The Doctrine of Christ and the Holy Spirit<br />
+Part 5: The Doctrine of the Application of Redemption<br />
+Part 6: The Doctrine of the Church<br />
 Part 7: The Doctrine of the Future
 
 The emphasis of systemmatic theology is *what does God want us to believe and to know* while the emphasis of Christian ethics is *what God wants us to do and what attitudes we should seek to have*. Theology is about how we should think and ethics is about how we should live. This book will focus on what to think but will touch on application as it is the true value of having formed Biblically-aligned thinking.
