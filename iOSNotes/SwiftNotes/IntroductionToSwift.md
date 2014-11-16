@@ -498,28 +498,3 @@ Advanced Swift
 Integrating Swift with Objective-C
 
 Swift Interoperability in Depth
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
