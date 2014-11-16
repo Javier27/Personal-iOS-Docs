@@ -488,10 +488,15 @@ let lastIn = intStack.pop()
 
 ##Additional Resources
 Using Swift with Cocoa & Objective-C
+
 Swift Books
+
 Intermediate Swift
+
 Advanced Swift
+
 Integrating Swift with Objective-C
+
 Swift Interoperability in Depth
 
 
