@@ -139,8 +139,6 @@ static const NSUInteger kDefaultNumberOfYearsInTheFutureAllowed = 20;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"blackoutDatePickerDelegateInvalidBlackoutDateChosen"
                                                             object:self];
         [self pickClosestAvailableDateForDatePicker:(BlackoutDatePicker *)picker];
-        
-        picker.selectedDate = [self.calendar dateFromComponents:self.selectedDateComponents];
 
         [picker selectRow:(self.selectedDateComponents.year - [self.calendar component:NSCalendarUnitYear fromDate:self.minimumDate]) inComponent:PickerViewComponentYear animated:YES];
         [picker selectRow:(self.selectedDateComponents.month - 1) inComponent:PickerViewComponentMonth animated:YES];
@@ -272,6 +270,8 @@ static const NSUInteger kDefaultNumberOfYearsInTheFutureAllowed = 20;
             self.selectedDateComponents = (minDateDifference != NSIntegerMax) ? minDateAvailable : maxDateAvailable;
             break;
     }
+
+    datePicker.selectedDate = [self.calendar dateFromComponents:self.selectedDateComponents];
 }
 
 - (void)decrementDateComponents:(NSDateComponents *)dateComponents
@@ -304,6 +304,26 @@ static const NSUInteger kDefaultNumberOfYearsInTheFutureAllowed = 20;
     } else {
         dateComponents.day++;
     }
+}
+
+- (void)updateRowsToSelectedDayUsingPicker:(BlackoutDatePicker *)datePicker
+{
+    self.selectedDateComponents = [self.calendar components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear)
+                                                   fromDate:datePicker.selectedDate];
+    BOOL isValidSelection = [self isDateAvailable:[self.calendar dateFromComponents:self.selectedDateComponents] datePicker:datePicker];
+    if (!isValidSelection) {
+        [self pickClosestAvailableDateForDatePicker:datePicker];
+    }
+
+    [datePicker selectRow:(self.selectedDateComponents.day-1) inComponent:PickerViewComponentDay animated:NO];
+    [datePicker selectRow:(self.selectedDateComponents.month-1) inComponent:PickerViewComponentMonth animated:NO];
+    [datePicker selectRow:(self.selectedDateComponents.year - [self.calendar component:NSCalendarUnitYear fromDate:self.minimumDate]) inComponent:PickerViewComponentYear animated:NO];
+    [self.delegate dateChangedToDate:datePicker.selectedDate];
+}
+
+- (void)messageViewControllerWithDate
+{
+    [self.delegate dateChangedToDate:[self.calendar dateFromComponents:self.selectedDateComponents]];
 }
 
 @end

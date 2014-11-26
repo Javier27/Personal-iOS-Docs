@@ -24,4 +24,7 @@
 
 - (id)initWithDate:(NSDate *)date;
 
+- (void)updateRowsToSelectedDayUsingPicker:(BlackoutDatePicker *)datePicker;
+- (void)messageViewControllerWithDate;
+
 @end

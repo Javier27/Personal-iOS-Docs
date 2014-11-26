@@ -25,6 +25,11 @@
     return self;
 }
 
+- (void)didMoveToWindow
+{
+    [self.controller messageViewControllerWithDate];
+}
+
 - (void)setController:(id<BlackoutDatePickerDelegateAndDataSource, UIPickerViewDelegate, UIPickerViewDataSource>)controller
 {
     if (controller) {
@@ -32,6 +37,7 @@
         self.delegate = controller;
         self.dataSource = controller;
         _controller = controller;
+        [controller updateRowsToSelectedDayUsingPicker:self];
     }
 }
 

@@ -179,7 +179,7 @@
 - (void)showErrorMessage
 {
     if (!self.labelShowing && self.invalidDateMessage) {
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             self.labelShowing = YES;
             CGRect frame = self.superview.frame;
             frame.origin.y -= 40;
@@ -196,7 +196,7 @@
 - (void)removeErrorMessage
 {
     if (self.labelShowing && self.invalidDateMessage) {
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             self.labelShowing = NO;
             CGRect frame = self.superview.frame;
             frame.origin.y += 40;

@@ -19,6 +19,8 @@ typedef enum {
 
 @required
 
+- (void)updateRowsToSelectedDayUsingPicker:(BlackoutDatePicker *)datePicker;
+- (void)messageViewControllerWithDate;
 - (void)updateMaxDate:(NSDate *)date;
 - (void)updateMinDate:(NSDate *)date;
 

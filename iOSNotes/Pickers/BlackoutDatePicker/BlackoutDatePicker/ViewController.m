@@ -57,7 +57,6 @@
     self.datePickerController.delegate = self;
 
     self.datePicker.controller = self.datePickerController;
-    self.datePicker2.controller = self.datePickerController;
 
     self.dateField = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 150, 50)];
     [self.dateField setBackgroundColor:[UIColor blackColor]];
