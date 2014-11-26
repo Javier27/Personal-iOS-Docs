@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F342CD3E1A24FA16001B19FB /* BlackoutDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F342CD3D1A24FA16001B19FB /* BlackoutDatePicker.m */; };
+		F342CD411A24FA23001B19FB /* BlackoutDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F342CD401A24FA23001B19FB /* BlackoutDatePickerController.m */; };
+		F342CD441A252C5D001B19FB /* BlackoutDatePicker+ErrorSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F342CD431A252C5D001B19FB /* BlackoutDatePicker+ErrorSupport.m */; };
 		F36CB0A31A24B6D100794AE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F36CB0A21A24B6D100794AE1 /* main.m */; };
 		F36CB0A61A24B6D100794AE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F36CB0A51A24B6D100794AE1 /* AppDelegate.m */; };
 		F36CB0A91A24B6D100794AE1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F36CB0A81A24B6D100794AE1 /* ViewController.m */; };
@@ -14,8 +17,6 @@
 		F36CB0AE1A24B6D100794AE1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36CB0AD1A24B6D100794AE1 /* Images.xcassets */; };
 		F36CB0B11A24B6D100794AE1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36CB0AF1A24B6D100794AE1 /* LaunchScreen.xib */; };
 		F36CB0BD1A24B6D100794AE1 /* BlackoutDatePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F36CB0BC1A24B6D100794AE1 /* BlackoutDatePickerTests.m */; };
-		F36CB0C81A24B6FF00794AE1 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F36CB0C71A24B6FF00794AE1 /* DatePicker.m */; };
-		F36CB0CB1A24B70A00794AE1 /* DatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F36CB0CA1A24B70A00794AE1 /* DatePickerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F342CD3C1A24FA16001B19FB /* BlackoutDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackoutDatePicker.h; sourceTree = "<group>"; };
+		F342CD3D1A24FA16001B19FB /* BlackoutDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackoutDatePicker.m; sourceTree = "<group>"; };
+		F342CD3F1A24FA23001B19FB /* BlackoutDatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackoutDatePickerController.h; sourceTree = "<group>"; };
+		F342CD401A24FA23001B19FB /* BlackoutDatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackoutDatePickerController.m; sourceTree = "<group>"; };
+		F342CD421A252C5D001B19FB /* BlackoutDatePicker+ErrorSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlackoutDatePicker+ErrorSupport.h"; sourceTree = "<group>"; };
+		F342CD431A252C5D001B19FB /* BlackoutDatePicker+ErrorSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BlackoutDatePicker+ErrorSupport.m"; sourceTree = "<group>"; };
 		F36CB09D1A24B6D100794AE1 /* BlackoutDatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackoutDatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36CB0A11A24B6D100794AE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F36CB0A21A24B6D100794AE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,10 +49,6 @@
 		F36CB0B61A24B6D100794AE1 /* BlackoutDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackoutDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36CB0BB1A24B6D100794AE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F36CB0BC1A24B6D100794AE1 /* BlackoutDatePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlackoutDatePickerTests.m; sourceTree = "<group>"; };
-		F36CB0C61A24B6FF00794AE1 /* DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePicker.h; sourceTree = "<group>"; };
-		F36CB0C71A24B6FF00794AE1 /* DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePicker.m; sourceTree = "<group>"; };
-		F36CB0C91A24B70A00794AE1 /* DatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerController.h; sourceTree = "<group>"; };
-		F36CB0CA1A24B70A00794AE1 /* DatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,16 +92,18 @@
 			children = (
 				F36CB0A41A24B6D100794AE1 /* AppDelegate.h */,
 				F36CB0A51A24B6D100794AE1 /* AppDelegate.m */,
-				F36CB0C61A24B6FF00794AE1 /* DatePicker.h */,
-				F36CB0C71A24B6FF00794AE1 /* DatePicker.m */,
-				F36CB0C91A24B70A00794AE1 /* DatePickerController.h */,
-				F36CB0CA1A24B70A00794AE1 /* DatePickerController.m */,
 				F36CB0A71A24B6D100794AE1 /* ViewController.h */,
 				F36CB0A81A24B6D100794AE1 /* ViewController.m */,
 				F36CB0AA1A24B6D100794AE1 /* Main.storyboard */,
 				F36CB0AD1A24B6D100794AE1 /* Images.xcassets */,
 				F36CB0AF1A24B6D100794AE1 /* LaunchScreen.xib */,
 				F36CB0A01A24B6D100794AE1 /* Supporting Files */,
+				F342CD421A252C5D001B19FB /* BlackoutDatePicker+ErrorSupport.h */,
+				F342CD431A252C5D001B19FB /* BlackoutDatePicker+ErrorSupport.m */,
+				F342CD3C1A24FA16001B19FB /* BlackoutDatePicker.h */,
+				F342CD3D1A24FA16001B19FB /* BlackoutDatePicker.m */,
+				F342CD3F1A24FA23001B19FB /* BlackoutDatePickerController.h */,
+				F342CD401A24FA23001B19FB /* BlackoutDatePickerController.m */,
 			);
 			path = BlackoutDatePicker;
 			sourceTree = "<group>";
@@ -230,10 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36CB0A91A24B6D100794AE1 /* ViewController.m in Sources */,
-				F36CB0CB1A24B70A00794AE1 /* DatePickerController.m in Sources */,
 				F36CB0A61A24B6D100794AE1 /* AppDelegate.m in Sources */,
+				F342CD411A24FA23001B19FB /* BlackoutDatePickerController.m in Sources */,
 				F36CB0A31A24B6D100794AE1 /* main.m in Sources */,
-				F36CB0C81A24B6FF00794AE1 /* DatePicker.m in Sources */,
+				F342CD3E1A24FA16001B19FB /* BlackoutDatePicker.m in Sources */,
+				F342CD441A252C5D001B19FB /* BlackoutDatePicker+ErrorSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +430,7 @@
 				F36CB0C21A24B6D100794AE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F36CB0C31A24B6D100794AE1 /* Build configuration list for PBXNativeTarget "BlackoutDatePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +439,7 @@
 				F36CB0C51A24B6D100794AE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

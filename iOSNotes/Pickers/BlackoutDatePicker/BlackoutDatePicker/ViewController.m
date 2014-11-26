@@ -7,16 +7,19 @@
 //
 
 #import "ViewController.h"
-#import "DatePicker.h"
-#import "DatePickerController.h"
+#import "BlackoutDatePicker.h"
+#import "BlackoutDatePickerController.h"
+#import "BlackoutDatePicker+ErrorSupport.h"
 
-@interface ViewController () <DatePickerControllerDelegate>
+@interface ViewController () <BlackoutDatePickerControllerDelegate>
 
-@property (strong, nonatomic) UITextField *dateField;
+@property (nonatomic, strong) UITextField *dateField;
 
-@property (strong, nonatomic) DatePicker *datePicker;
+@property (nonatomic, strong) BlackoutDatePicker_ErrorSupport *datePicker;
+@property (nonatomic, strong) BlackoutDatePicker *datePicker2;
+@property (nonatomic, strong) BlackoutDatePickerController *datePickerController;
 
-@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 @end
 
@@ -26,8 +29,9 @@
 {
     [super viewDidLoad];
 
-    self.datePicker = [DatePicker new];
-    self.datePicker.controllerDelegate = self;
+    self.datePicker = [BlackoutDatePicker_ErrorSupport new];
+    self.datePicker.blackoutSelectionType = BlackoutDatePickerSelectionTypeFuture;
+    self.datePicker.selectedDate = [NSDate date];
 
     UIToolbar *toolBar = [UIToolbar new];
     toolBar.barStyle = UIBarStyleBlackOpaque;
@@ -46,6 +50,14 @@
                                        [self.dateFormatter dateFromString:@"11-27-2014"],
                                        [self.dateFormatter dateFromString:@"11-28-2014"]
                                        ];
+    self.datePicker.invalidDateMessage = [[NSAttributedString alloc] initWithString:@"Please select a valid date."];
+    self.datePicker.invalidDateMessageBackgroundColor = [UIColor whiteColor];
+
+    self.datePickerController = [[BlackoutDatePickerController alloc] initWithDate:self.datePicker.selectedDate];
+    self.datePickerController.delegate = self;
+
+    self.datePicker.controller = self.datePickerController;
+    self.datePicker2.controller = self.datePickerController;
 
     self.dateField = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 150, 50)];
     [self.dateField setBackgroundColor:[UIColor blackColor]];
