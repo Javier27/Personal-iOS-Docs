@@ -13,3 +13,7 @@ layout_*="wrap_content" // view will be as big as its content
 
 We can also set padding with ```android:padding="24dp"``` where dp is density-independent pixels.
 Set the LinearLayout to be horizontal or vertical via ```android:orientation="horizontal"```
+
+```onCreate(Bundle)``` is called when an instance of the activity subclass is created. When an activity is created, it needs a user interface to manage. To get the activity its user interface, you call the method:
+```public void setContentView(int layoutResID)```
+which *inflates* a layout and puts it on screen. When inflated all widgets associated with a layout are instantiated as defined by its attibutes. 
